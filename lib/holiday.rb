@@ -1,23 +1,6 @@
 require 'pry'
 
 def second_supply_for_fourth_of_july(holiday_hash)
-  # given that holiday_hash looks like this:
-  # {
-  #   :winter => {
-  #     :christmas => ["Lights", "Wreath"],
-  #     :new_years => ["Party Hats"]
-  #   },
-  #   :summer => {
-  #     :fourth_of_july => ["Fireworks", "BBQ"]
-  #   },
-  #   :fall => {
-  #     :thanksgiving => ["Turkey"]
-  #   },
-  #   :spring => {
-  #     :memorial_day => ["BBQ"]
-  #   }
-  # }
-  # return the second element in the 4th of July array
   return holiday_hash[:summer][:fourth_of_july][1]
 end
 
@@ -57,12 +40,9 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
-  # return an array of holiday names (as symbols) where supply lists
-  # include the string "BBQ"
   holiday_array = []
   holiday_hash.each do |season, holidays|
     holidays.each do |holiday, supplies|
-      binding.pry
       if supplies.include?("BBQ")
         holiday_array << holiday
       end
